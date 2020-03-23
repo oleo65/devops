@@ -3,7 +3,8 @@ version: '3.7'
 services: 
 
     telegraf:
-        context: .
+        build:
+            context: .
         environment: 
             - "HOST_PROC=/host/proc"
         volumes: 
