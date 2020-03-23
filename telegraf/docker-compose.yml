@@ -6,7 +6,8 @@ services:
         build:
             context: .
         environment: 
-            - "HOST_PROC=/host/proc"
+            - "HOST_PROC=/hostfs/proc"
+            - "HOST_MOUNT_PREFIX=/hostfs"
         volumes: 
-            - /proc:/host/proc:ro
+            - /:/hostfs/:ro
             - /var/run/docker.sock:/var/run/docker.sock
