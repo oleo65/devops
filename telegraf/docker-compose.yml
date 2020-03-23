@@ -1,0 +1,11 @@
+version: '3.7'
+
+services: 
+
+    telegraf:
+        context: .
+        environment: 
+            - "HOST_PROC=/host/proc"
+        volumes: 
+            - /proc:/host/proc:ro
+            - /var/run/docker.sock:/var/run/docker.sock
