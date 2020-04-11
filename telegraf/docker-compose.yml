@@ -5,6 +5,7 @@ services:
     telegraf:
         build:
             context: .
+        restart: unless-stopped
         environment: 
             - "HOST_PROC=/hostfs/proc"
             - "HOST_MOUNT_PREFIX=/hostfs"
